@@ -97,7 +97,7 @@ public class Student extends Conexion implements CRUD{
                     int id = rs.getInt("id");
                     String name = rs.getString("name");
                     String document = rs.getString("document");
-                    Student student = new Student(id, name, document);
+                    Student student = new Student(id, document, name);
                     students.add(student);
                 }
             } catch (SQLException e) {
@@ -131,7 +131,7 @@ public class Student extends Conexion implements CRUD{
                         int id = rs.getInt("id");
                         String document = rs.getString("document");
                         String name = rs.getString("name");
-                        return new Student(id, name, document);
+                        return new Student(id, document, name);
                     } else {
                         return null;
                     }
